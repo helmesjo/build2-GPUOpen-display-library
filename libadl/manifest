@@ -1,15 +1,17 @@
 : 1
 name: libadl
-version: 0.1.0-a.0.z
+version: 18.0.0-a.0.z
+upstream-version: 18.0
 type: lib,binless
 language: c
-project: build2-gpuopen-librariesandsdks-display-library
-summary: adl C library
+project: gpuopen
+summary: AMD Display Library (ADL) C API headers
+topics: amd, adl, gpu, display, graphics driver
 license: MIT ; MIT License.
 package-description-file: PACKAGE-README.md
-url: https://example.org/upstream
-email: upstream@example.org
-package-url: https://github.com/build2-packaging/build2-gpuopen-librariesandsdks-display-library
+url: https://github.com/GPUOpen-LibrariesAndSDKs/display-library
+doc-url: https://gpuopen-librariesandsdks.github.io/adl/
+package-url: https://github.com/build2-packaging/GPUOpen-display-library
 package-email: packaging@build2.org ; Mailing list.
 depends: * build2 >= 0.18.0
 depends: * bpkg >= 0.18.0
