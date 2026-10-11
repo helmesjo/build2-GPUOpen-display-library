@@ -1,0 +1,3 @@
+import libs = libadl%lib{adl}
+
+exe{driver}: {h c}{**} $libs testscript{**}
