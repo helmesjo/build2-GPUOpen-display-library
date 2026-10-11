@@ -1,3 +1,14 @@
 import libs = libadl%lib{adl}
 
 exe{driver}: {h c}{**} $libs testscript{**}
+
+# The upstream headers use nameless structs and unions, which MSVC warns
+# about at /W4, and enumerator values outside the range of int, which Clang
+# and GCC warn about with -pedantic (GCC has no narrower option for it).
+#
+if ($c.id == 'msvc')
+  c.coptions += /wd4201
+elif ($c.id.type == 'clang')
+  c.coptions += -Wno-microsoft-enum-value
+elif ($c.id == 'gcc')
+  c.coptions += -Wno-pedantic
